@@ -6,6 +6,8 @@ int b = 0;
 int c = 0;
 PImage img1;
 PImage img2;
+PImage img3;
+int time = 0;
 
 
 void setup() {
@@ -22,8 +24,6 @@ void setup() {
   text("Rock", 150, 150);
   text("Paper", 350, 150);
   text("Scissors", 250, 350);
-  
-  
 }
 void draw() {
 
@@ -51,24 +51,34 @@ void draw() {
   if (AIcardType == PlayerCardType) {
     c = 1;
   }
-  textSize(24);
-  if (a == 1) {
-    img2 = loadImage("IMG_2951.JPG");
-    image(img2, 0, 0);
-    fill(0);
-    textAlign(CENTER);
-    text("WINNER!", 250, 50);
-  }
-  if (b == 1) {
-    fill(0);
-    textAlign(CENTER);
-    text("YOU LOSE!", 250, 50);
-  }
-  if (c == 1) {
-    fill(0);
-    textAlign(CENTER);
-    text("TIE!", 250, 50);
-  }
+  // if (frameCount % 60 == 0) {
+  //  time += 1;
+  // }
+  //if (time == 4){
+  //   time = 1;
+  // }
+  // if (time == 1){
+}
+textSize(48);
+if (a == 1) {
+  img2 = loadImage("star (1).png");
+  image(img2, 0, 0);
+  fill(0);
+  textAlign(CENTER);
+  text("WINNER!", 250, 250);
+}
+if (b == 1) {
+  img3 = loadImage("fire-textures-5.jpg");
+  image(img3, 0, 0);
+  fill(0);
+  textAlign(CENTER);
+  text("YOU LOSE!", 250, 250);
+}
+if (c == 1) {
+  fill(0);
+  textAlign(CENTER);
+  text("TIE!", 250, 50);
+}
 }
 void mouseClicked() {
   if (mouseX>100 && mouseX<200 && mouseY>100 && mouseY<200) {
