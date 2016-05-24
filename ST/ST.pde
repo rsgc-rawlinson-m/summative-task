@@ -54,6 +54,7 @@ void draw() {
   textSize(24);
   if (a == 1) {
     img2 = loadImage("IMG_2951.JPG");
+    image(img2, 0, 0);
     fill(0);
     textAlign(CENTER);
     text("WINNER!", 250, 50);
