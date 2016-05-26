@@ -54,7 +54,7 @@ void draw() {
   // if (frameCount % 60 == 0) {
   //  time += 1;
   // }
-  //if (time == 4){
+  //if (time >= 4){
   //   time = 1;
   // }
   // if (time == 1){
