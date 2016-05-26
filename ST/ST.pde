@@ -8,9 +8,12 @@ PImage img1;
 PImage img2;
 PImage img3;
 int time = 0;
+int DisplayThing = 0;
+int TextOpacity1 = 0;
 
 
 void setup() {
+  //set up the background and buttons
   size(500, 500);
   img1 = loadImage("paper-rock-scissors.jpg");
   image(img1, 0, 0);
@@ -27,6 +30,7 @@ void setup() {
 }
 void draw() {
 
+  //functions to check for winning/losing/tying 
   if (AIcardType == 1 && PlayerCardType == 2) {
     a = 1;
   }
@@ -51,38 +55,62 @@ void draw() {
   if (AIcardType == PlayerCardType) {
     c = 1;
   }
-  // if (frameCount % 60 == 0) {
-  //  time += 1;
-  // }
-  //if (time >= 4){
-  //   time = 1;
-  // }
-  // if (time == 1){
+  if (frameCount % 60 == 0) {
+    time += 1;
+  }
+if ( time == 1){
+  DisplayThing = 1;
+    println("Display Thing ="+DisplayThing);
 }
-textSize(48);
-if (a == 1) {
-  img2 = loadImage("star (1).png");
-  image(img2, 0, 0);
-  fill(0);
-  textAlign(CENTER);
-  text("WINNER!", 250, 250);
+if( time == 2){
+  TextOpacity1 = 0;
+  DisplayThing = 2;
+  println("Display Thing ="+DisplayThing);
 }
-if (b == 1) {
-  img3 = loadImage("fire-textures-5.jpg");
-  image(img3, 0, 0);
-  fill(0);
-  textAlign(CENTER);
-  text("YOU LOSE!", 250, 250);
+if( time == 3){
+  DisplayThing = 3;
+  println("Display Thing ="+DisplayThing);
 }
-if (c == 1) {
-  fill(0);
-  textAlign(CENTER);
-  text("TIE!", 250, 50);
-}
+
+  //make a timed display of ROCK PAPER SCISSORS
+  if (DisplayThing == 1) {
+text("ROCK!!!", 250, 250);
+  }
+
+  if (DisplayThing == 2) {
+text("PAPER!!!", 250, 250);
+  }
+  if (DisplayThing == 3) {
+    text("SCISSORS!!!", 250, 250);
+
+  }
+
+  
+  textSize(48);
+  if (a == 1) {
+    img2 = loadImage("star (1).png");
+    image(img2, 0, 0);
+    fill(0);
+    textAlign(CENTER);
+    text("WINNER!", 250, 250);
+  }
+  if (b == 1) {
+    img3 = loadImage("fire-textures-5.jpg");
+    image(img3, 0, 0);
+    fill(0);
+    textAlign(CENTER);
+    text("YOU LOSE!", 250, 250);
+  }
+  if (c == 1) {
+    fill(0);
+    textAlign(CENTER);
+    text("TIE!", 250, 50);
+  }
 }
 void mouseClicked() {
   if (mouseX>100 && mouseX<200 && mouseY>100 && mouseY<200) {
     PlayerCardType = 1;
+    buttonColour = 100;
   } else if (mouseX>300 && mouseX<400 && mouseY>100 && mouseY<200) {
     PlayerCardType = 2;
   } else if (mouseX>200 && mouseX<300 && mouseY>300 && mouseY<400) {
