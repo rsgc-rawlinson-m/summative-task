@@ -7,9 +7,11 @@ int c = 0;
 PImage img1;
 PImage img2;
 PImage img3;
+PImage img4;
 int time = 0;
 int DisplayThing = 0;
 int TextOpacity1 = 0;
+
 
 
 void setup() {
@@ -81,17 +83,17 @@ void draw() {
 
   //make a timed display of ROCK PAPER SCISSORS
   if (DisplayThing == 1) {
-    fill(255, 0, 0);
-    text("ROCK!!!", 250, 250);
+    fill(0);
+    text("ROCK!!!", 250, 50);
   }
 
   if (DisplayThing == 2) {
-    fill(255, 0, 0);
-    text("PAPER!!!", 250, 250);
+    fill(0);
+    text("PAPER!!!", 250, 50);
   }
   if (DisplayThing == 3) {
-    fill(255, 0, 0);
-    text("SCISSORS!!!", 250, 250);
+    fill(0);
+    text("SCISSORS!!!", 250, 50);
   }
 
 
@@ -112,9 +114,11 @@ void draw() {
     text("YOU LOSE!", 250, 250);
   }
   if (c == 1) {
+    img4 = loadImage("MTDMT90lg.jpg");
+    image(img4, 0, 0);
     fill(0);
     textAlign(CENTER);
-    text("TIE!", 250, 50);
+    text("TIE!", 250, 150);
   }
 }
 void mouseClicked() {
