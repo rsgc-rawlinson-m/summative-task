@@ -16,20 +16,23 @@ void setup() {
   //set up the background and buttons
   size(500, 500);
   img1 = loadImage("paper-rock-scissors.jpg");
-  image(img1, 0, 0);
+}
+void draw() {
+
+    image(img1, 0, 0);
   fill(buttonColour);
   rect(100, 100, 100, 100);
   rect(300, 100, 100, 100);
   rect(200, 300, 100, 100);
   println("AIcardType is:" + AIcardType);
+  textSize(36);
   fill(0);
   textAlign(CENTER);
   text("Rock", 150, 150);
   text("Paper", 350, 150);
   text("Scissors", 250, 350);
-}
-void draw() {
 
+  
   //functions to check for winning/losing/tying 
   if (AIcardType == 1 && PlayerCardType == 2) {
     a = 1;
@@ -58,34 +61,39 @@ void draw() {
   if (frameCount % 60 == 0) {
     time += 1;
   }
-if ( time == 1){
-  DisplayThing = 1;
+  if ( time == 1) {
+    DisplayThing = 1;
     println("Display Thing ="+DisplayThing);
-}
-if( time == 2){
-  TextOpacity1 = 0;
-  DisplayThing = 2;
-  println("Display Thing ="+DisplayThing);
-}
-if( time == 3){
-  DisplayThing = 3;
-  println("Display Thing ="+DisplayThing);
-}
+  }
+  if ( time == 2) {
+    TextOpacity1 = 0;
+    DisplayThing = 2;
+    println("Display Thing ="+DisplayThing);
+  }
+  if ( time == 3) {
+    DisplayThing = 3;
+    println("Display Thing ="+DisplayThing);
+  }
 
   //make a timed display of ROCK PAPER SCISSORS
   if (DisplayThing == 1) {
-text("ROCK!!!", 250, 250);
+    fill(0);
+    text("ROCK!!!", 250, 250);
+    noFill();
   }
 
   if (DisplayThing == 2) {
-text("PAPER!!!", 250, 250);
+    fill(0);
+    text("PAPER!!!", 250, 250);
+    noFill();
   }
   if (DisplayThing == 3) {
+    fill(0);
     text("SCISSORS!!!", 250, 250);
-
+    noFill();
   }
 
-  
+
   textSize(48);
   if (a == 1) {
     img2 = loadImage("star (1).png");
