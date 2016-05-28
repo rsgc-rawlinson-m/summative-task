@@ -1,3 +1,4 @@
+//variables 
 int buttonColour = 155;
 int AIcardType = int(random(1, 4));
 int PlayerCardType = 0;
@@ -20,7 +21,8 @@ void setup() {
   img1 = loadImage("paper-rock-scissors.jpg");
 }
 void draw() {
-
+  
+  //setting up the background and check functions
   image(img1, 0, 0);
   fill(buttonColour);
   rect(100, 100, 100, 100);
@@ -60,6 +62,8 @@ void draw() {
   if (AIcardType == PlayerCardType) {
     c = 1;
   }
+
+  //Set timer for changing display
   if (frameCount % 60 == 0) {
     time += 1;
   }
@@ -98,13 +102,25 @@ void draw() {
 
 
   textSize(48);
-
+//set images and screens for losing, winning, tying
   if (a == 1) {
     img2 = loadImage("star (1).png");
     image(img2, 0, 0);
     fill(0);
     textAlign(CENTER);
     text("WINNER!", 250, 250);
+    if (AIcardType == 1) {
+      textSize(40);
+      text("Enemy picked Rock", 250, 300);
+    }
+    if (AIcardType == 2) {
+      textSize(40);
+      text("Enemy picked Paper", 250, 300);
+    }
+    if (AIcardType == 3) {
+      textSize(40);
+      text("Enemy picked Scissors", 250, 300);
+    }
   }
   if (b == 1) {
     img3 = loadImage("fire-textures-5.jpg");
@@ -112,6 +128,18 @@ void draw() {
     fill(0);
     textAlign(CENTER);
     text("YOU LOSE!", 250, 250);
+    if (AIcardType == 1) {
+      textSize(40);
+      text("Enemy picked Rock", 250, 300);
+    }
+    if (AIcardType == 2) {
+      textSize(40);
+      text("Enemy picked Paper", 250, 300);
+    }
+    if (AIcardType == 3) {
+      textSize(40);
+      text("Enemy picked Scissors", 250, 300);
+    }
   }
   if (c == 1) {
     img4 = loadImage("MTDMT90lg.jpg");
@@ -121,6 +149,7 @@ void draw() {
     text("TIE!", 250, 150);
   }
 }
+//setting hitboxes
 void mouseClicked() {
   if (mouseX>100 && mouseX<200 && mouseY>100 && mouseY<200) {
     PlayerCardType = 1;
